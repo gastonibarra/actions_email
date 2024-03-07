@@ -1,0 +1,22 @@
+name: Send Email Notification
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send_email_notification:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Send email notification
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.example.com
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: 'GitHub Action Notification'
+        body: 'This is a test email notification from GitHub Actions.'
+        to: gaston.ibarra@avenga.com
