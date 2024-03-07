@@ -19,4 +19,5 @@ jobs:
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: 'GitHub Action Notification'
         body: 'This is a test email notification from GitHub Actions.'
+        from: ${{ secrets.EMAIL_USERNAME }}
         to: gaston.ibarra@avenga.com
